@@ -3,53 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Science Museum</title>
+    <title>Community Science Museum | Home</title>
+    <meta
+        name="description"
+        content="Explore the Community Science Museum, with interactive exhibitions and science experiences for curious minds of all ages."
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
-
+     <link
+        rel="stylesheet"
+        href="fontawesome/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <header class="site-header">
         <div class="container header-content">
             <a class="site-logo" href="index.html">
-                <img src="images/logo.jpg" alt="Community Science Museum Logo">
+                <img src="images/logo.webp" alt="">
                 <span>Community<br /> Science Museum</span>
             </a>
             <nav class="main-nav" aria-label="Main navigation">
-                <a class="active" href="index.html">Home</a>
+                <a class="active" href="index.html" aria-current="page">Home</a>
                 <a href="explore.html">Explore</a>
                 <a href="exhibitions.html">Exhibitions</a>
                 <a href="visit.html">Visit</a>
                 <a href="get-involved.html">Get Involved</a>
             </nav>
-            <div class="search-bar">
-                <span class="search-icon">🔎</span>
-                <span>Search..</span>
-            </div>
-            <button class="menu-toggle" aria-label="Open navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <form class="search-bar" action="coming-soon.html" method="get">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input 
+                    type="search"
+                    name="q"
+                    placeholder="Search..."
+                    aria-label="Search the museum">
+            </form>
+            <details class="mobile-menu">
+                <summary class="menu-toggle" aria-label="Open navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </summary>
+                <nav class="mobile-nav" aria-label="Mobile navigation">
+                    <a class="active" href="index.html" aria-current="page">Home</a>
+                    <a href="explore.html">Explore</a>
+                    <a href="exhibitions.html">Exhibitions</a>
+                    <a href="visit.html">Visit</a>
+                    <a href="get-involved.html">Get Involved</a>
+                </nav>
+            </details>
 
         </div>
     </header>
+
+    <main>
+       <section class="home-hero">
+            <div class="hero-coral-decoration" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="container hero-content">
+                <div class="hero-text">
+               <p class="label">Explore Together</p>
+               <h1>
+                EXPLORE.<br />
+                LEARN.<br />
+                BELONG<span class="hero-dot"></span>
+               </h1>
+               <p class="hero-description">
+                Discover the wonders of science<br /> and our place in the universe.
+               </p>
+               <a class="btn-primary" href="visit.html">
+                Plan your visit
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            <div class="hero-stats">
+                <i class="fa-regular fa-star hero-star" aria-hidden="true"></i>
+                <div>
+                    <p class="stat-number">1000+</p>
+                    <p class="stat-caption">Interactive exhibits to explore</p>
+                </div>
+            </div>
+        </div>
+            <div class="hero-visual">
+            <div class="hero-image">
+                <picture>
+                    <source
+                        media="(max-width: 767px)"
+                        srcset="images/home/home-hero-mobile.webp"
+                    >
+                    <img
+                        src="images/home/home-hero.webp"
+                        alt="Interactive science museum exhibition"
+                        width="1364"
+                        height="1024"
+                        fetchpriority="high"
+                    >
+                </picture>
+            </div>
+                <div class="hero-badge">
+                    <span class="badge-text">SCIENCE<br />COMES TO<br /> LIFE.</span>
+                    <span class="badge-ray badge-ray-one" aria-hidden="true"></span>
+                    <span class="badge-ray badge-ray-two" aria-hidden="true"></span>
+                </div>
+            </div>
+        </div>       
+    </section>
+        <section class="featured-exhibitions">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="label">Start Exploring</p>
+                    <h2>Featured Exhibitions<span class="heading-dot heading-dot-purple" aria-hidden="true"></span></h2>
+                </div>
+                <div class="exhibition-cards">
+                    <article class="exhibition-card cosmology-card">
+                        <img
+                            src="images/home/home-cosmology.webp"
+                            alt="Cosmology exhibition"
+                            width="800"
+                            height="533"
+                            loading="lazy"
+                        />
+                        <div class="card-content">
+                            <p class="label">Cosmology</p>
+                            <h3>Explore the universe</h3>
+                        </div>
+                    </article>
+                    <article class="exhibition-card evolution-card">
+                        <img
+                            src="images/home/home-evolution.webp"
+                            alt="Evolution exhibition"
+                            width="800"
+                            height="533"
+                            loading="lazy"
+                        />
+                        <div class="card-content">
+                            <p class="label">Evolution</p>
+                            <h3>Journey through the history of life</h3>
+                        </div>
+                    </article>
+                    <article class="exhibition-card robotics-card">
+                        <img
+                            src="images/home/home-robotics-ai.webp"
+                            alt="Robotics and artificial intelligence exhibition"
+                            width="800"
+                            height="533"
+                            loading="lazy"
+                        />
+                        <div class="card-content">
+                            <p class="label">Robotics & AI</p>
+                            <h3>Explore the technology of tomorrow</h3>
+                        </div>
+                    </article>
+                </div>
+
+            <a class="text-link" href="exhibitions.html">
+                View all exhibitions
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </section>
+
+        <section class="museum-for-everyone">
+            <div class="container museum-for-everyone-content">
+                <div class="museum-for-everyone-image">
+                    <picture>
+                        <source
+                            media="(max-width: 767px)"
+                            srcset="images/home/home-museum-for-everyone-mobile.webp"
+                        >
+                        <img
+                            src="images/home/home-museum-for-everyone.webp"
+                            alt="Visitors outside the Community Science Museum"
+                            width="1364"
+                            height="1024"
+                            loading="lazy"
+                        >
+                    </picture>
+                </div>
+                <div class="museum-for-everyone-text">
+                    <p class="label">For every curious mind</p>
+                    <h2>A museum<br />for everyone<span class="heading-dot heading-dot-yellow" aria-hidden="true"></span></h2>
+                    <p>
+                        Science is for everyone. Explore, learn and discover together through interactive experiences for all ages.
+                    </p>
+                    <a class="btn-secondary" href="explore.html">
+                        Explore
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="museum-decoration" aria-hidden="true">
+                    <div class="museum-orbit orbit-outer">
+                        <span class="orbit-dot purple-dot"></span>
+                    </div>
+                    <div class="museum-orbit orbit-inner">
+                        <span class="orbit-dot yellow-dot"></span>
+                    </div>
+                </div>
+            </div>
+            
+    </section>
+        <section class="plan-visit">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="label">Before you visit</p>
+                    <h2>Plan your visit<span class="heading-dot heading-dot-green" aria-hidden="true"></span></h2>
+                </div>
+                <div class="visit-cards">
+
+                <article class="visit-card opening-hours-card">
+                    <div class="visit-icon">
+                        <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                    </div>
+
+                        <div>
+                            <h3>Opening hours</h3>
+                            <p>Find your opening hours and plan your day at the museum</p>
+                            <a class="text-link" href="visit.html#opening-hours">See opening hours
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="visit-card getting-here-card">
+                        <div class="visit-icon">
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        </div>
+
+                        <div>
+                            <h3>Getting here</h3>
+                            <p>Find directions, parking options and public transport</p>
+                            <a class="text-link" href="visit.html#location">See directions
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a> 
+                        </div>
+                    </article>
+
+                    <article class="visit-card admission-card">
+                        <div class="visit-icon">
+                            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                        </div>
+
+                        <div>
+                            <h3>Admission</h3>
+                            <p>Entrance to the museum is free for everyone</p>
+                            <a class="text-link" href="visit.html#admission">Plan your visit
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div> 
+            </div>
+        </section>
+    </main>
+
     <section class="stay-connected">
         <div class="container stay-connected-content">
             <div>
                 <p class="label">Stay Connected</p>
-                <h2>Stay Curious. Follow along.</h2>
+                <h2>Stay curious. Follow along.</h2>
                 <p>Follow the museum for news, events and discoveries</p>
             </div>
 
             <div class="social-links">
-                <a href="#" aria-label="Instagram">Instagram</a>
-                <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                <a href="#" aria-label="YouTube">YouTube</a>
-                <a href="#" aria-label="Facebook">Facebook</a>
+                <a class="social-link instagram" href="coming-soon.html" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a class="social-link linkedin" href="coming-soon.html" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+                <a class="social-link youtube" href="coming-soon.html" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                </a>
+                <a class="social-link facebook" href="coming-soon.html" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -57,45 +288,51 @@
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-brand">
-                <h3>Community Science<br /> Museum</h3>
+                <p class="footer-brand-name">COMMUNITY SCIENCE<br /> MUSEUM</p>
                 <p>Explore. Learn. Belong</p>
             </div>
             <div class="footer-links">
                 <div>
-                    <h3>Explore</h3>
+                    <h2>EXPLORE</h2>
                     <a href="explore.html">Explore</a>
                     <a href="exhibitions.html">Exhibitions</a>
-                    <a href="#">Events</a>
+                    <a href="coming-soon.html">Events</a>
+                    <a href="explore.html#kids">For Kids</a>
                 </div>
                 <div>
-                    <h3>Visit</h3>
-                    <a href="visit.html">Plan Your Visit</a>
-                    <a href="#">Opening hours</a>
-                    <a href="#">Admission</a>
-                    <a href="#">Accessibility</a>
+                    <h2>VISIT</h2>
+                    <a href="visit.html">Plan your visit</a>
+                    <a href="visit.html#opening-hours">Opening hours</a>
+                    <a href="visit.html#admission">Admission</a>
+                    <a href="visit.html#accessibility">Accessibility</a>
                 </div>
                 <div>
-                    <h3>Museum</h3>
-                    <a href="#">About us</a>
-                    <a href="get-involved.html">Get Involved</a>
-                    <a href="get-involved.html">Volunteer</a>
-                    <a href="get-involved.html">Internships</a>
+                    <h2>MUSEUM</h2>
+                    <a href="coming-soon.html">About us</a>
+                    <a href="get-involved.html">Get involved</a>
+                    <a href="get-involved.html#volunteer">Volunteer</a>
+                    <a href="get-involved.html#internships">Internships</a>
                 </div>
             </div>
             <div class="newsletter">
-                <h3>Stay in the loop</h3>
+                <h2>STAY IN THE LOOP</h2>
                 <p>Get museum news, events and discoveries in your inbox</p>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Email address" aria-label="Email address" />
-                    <button type="button">Subscribe</button>
-                </div>
+                <form class="newsletter-form" action="coming-soon.html" method="get">
+                    <input
+                        type="email"
+                        placeholder="Email address"
+                        aria-label="Email address"
+                        required
+                    >
+                    <button type="submit">SUBSCRIBE</button>
+                </form>                
                 <p class="small-text">We respect your privacy</p>
             </div>
         </div>
             <div class="container footer-bottom">
                 <div>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms & Conditions</a>
+                    <a href="coming-soon.html">Privacy Policy</a>
+                    <a href="coming-soon.html">Terms & Conditions</a>
                 </div>
                 <p>&copy; 2026 Community Science Museum</p>
             </div>

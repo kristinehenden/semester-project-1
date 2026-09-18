@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Science Museum | Exhibitions</title>
+    <meta
+        name="description"
+        content="Explore five unique science exhibition spaces covering cosmology, evolution, biology, robotics, AI and ecology at the Community Science Museum."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+     <link
+        rel="stylesheet"
+        href="fontawesome/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+        <div class="container header-content">
+            <a class="site-logo" href="index.html">
+                <img src="images/logo.webp" alt="logo">
+                <span>Community<br /> Science Museum</span>
+            </a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a class="active" href="exhibitions.html" aria-current="page">Exhibitions</a>
+                <a href="visit.html">Visit</a>
+                <a href="get-involved.html">Get Involved</a>
+            </nav>
+              <form class="search-bar" action="coming-soon.html" method="get">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input 
+                    type="search"
+                    name="q"
+                    placeholder="Search..."
+                    aria-label="Search the museum">
+            </form>
+              <details class="mobile-menu">
+                <summary class="menu-toggle" aria-label="Open navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </summary>
+                <nav class="mobile-nav" aria-label="Mobile navigation">
+                    <a href="index.html">Home</a>
+                    <a href="explore.html">Explore</a>
+                    <a class="active" href="exhibitions.html" aria-current="page">Exhibitions</a>
+                    <a href="visit.html">Visit</a>
+                    <a href="get-involved.html">Get Involved</a>
+                </nav>
+            </details>
+
+        </div>
+    </header>
+<main>
+    <section class="exhibitions-hero">
+        <div class="hero-coral-decoration" aria-hidden="true">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="label">Exhibitions</p>
+                <h1>
+                    DISCOVER OUR<br />
+                    EXHIBITION<br />
+                    SPACES<span class="hero-dot"></span>
+                </h1>
+                <p class="hero-description">
+                    Explore science through five unique exhibition spaces,
+                    from the mysteries of the universe to life on Earth and
+                    the technology shaping our future
+                </p>
+                <a class="btn-primary" href="#exhibition-spaces">
+                    View exhibitions
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image">
+                <picture>
+                    <source media="(max-width: 767px)"
+                    srcset="images/exhibitions/exhibitions-hero-mobile.webp">
+                    <img
+                        src="images/exhibitions/exhibitions-hero.webp"
+                        alt="Visitors exploring an interactive science exhibition"
+                        width="1254"
+                        height="941"
+                        fetchpriority="high"
+                    />
+                </picture>
+                </div>
+                <div class="exhibitions-hero-badge hero-badge">
+                    <span class="badge-text">Explore<br />Learn<br />Belong</span>
+                    <span class="badge-ray badge-ray-one" aria-hidden="true"></span>
+                    <span class="badge-ray badge-ray-two" aria-hidden="true"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="exhibition-spaces" id="exhibition-spaces">
+        <div class="container">
+            <div class="section-heading">
+                <p class="label">Five Unique Spaces</p>
+                <h2>Our Exhibition Spaces<span class="heading-dot heading-dot-green" aria-hidden="true"></span></h2>
+            </div>
+            <div class="exhibition-space-cards">
+                <article class="exhibition-space-card cosmology-space">
+                <picture>
+                    <source media="(max-width: 767px)"
+                    srcset="images/exhibitions/exhibitions-cosmology-mobile.webp">
+                    <img
+                        src="images/exhibitions/exhibitions-cosmology.webp"
+                        alt="Cosmology exhibition exploring space and the universe"
+                        width="1607"
+                        height="905"
+                        loading="lazy"
+                    />
+                </picture>
+                    <div class="exhibition-space-content">
+                        <p class="label">Cosmology</p>
+                        <h3>Explore the universe</h3>
+                        <p>
+                            Discover the mysteries of space, from distant galaxies
+                            to the latest planetary exploration
+                        </p>
+                        <a class="text-link" href="coming-soon.html" aria-label="Explore cosmology">
+                            Explore
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+                <article class="exhibition-space-card evolution-space">
+                <picture>
+                    <source media="(max-width: 767px)"
+                    srcset="images/exhibitions/exhibitions-evolution-mobile.webp">
+                    <img
+                        src="images/exhibitions/exhibitions-evolution.webp"
+                        alt="Evolution exhibition featuring prehistoric life"
+                        height="1607"
+                        width="905"
+                        loading="lazy"
+                    />
+                </picture>
+                    <div class="exhibition-space-content">
+                        <p class="label">Evolution</p>
+                        <h3>Journey through the history of life</h3>
+                        <p>
+                            Explore evolution and discover dinosaurs, mammoths
+                            and other creatures from the past 
+                        </p>
+                        <a class="text-link" href="coming-soon.html" aria-label="Explore evolution">
+                            Explore
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+                <article class="exhibition-space-card biology-space">
+                <picture>
+                    <source media="(max-width: 767px)"
+                    srcset="images/exhibitions/exhibitions-biology-medicine-mobile.webp">
+                    <img src="images/exhibitions/exhibitions-biology-medicine.webp"
+                    alt="Biology and medicine exhibition exploring the human body"
+                    width="1606"
+                    height="904"
+                    loading="lazy"
+                    />
+                </picture>
+                <div class="exhibition-space-content">
+                    <p class="label">Biology & Medicine</p>
+                    <h3>Discover the human body</h3>
+                    <p>
+                        Explore the human body, medicine and discoveries
+                        that changed our lives
+                    </p>
+                    <a class="text-link" href="coming-soon.html" aria-label="Explore biology and medicine">
+                        Explore
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+                </article>
+                <article class="exhibition-space-card robotics-space">
+                <picture>
+                    <source media="(max-width: 767px)"
+                    srcset="images/exhibitions/exhibitions-robotics-ai-mobile.webp">
+                    <img
+                        src="images/exhibitions/exhibitions-robotics-ai.webp"
+                        alt="Robotics and artificial intelligence exhibition"
+                        width="1606"
+                        height="905"
+                        loading="lazy"
+                    />
+                </picture>
+                    <div class="exhibition-space-content">
+                        <p class="label">Robotics & AI</p>
+                        <h3>Explore the technology of tomorrow</h3>
+                        <p>
+                            Discover how robotics and AI are shaping our homes,
+                            workplaces and future
+                        </p>
+                        <a class="text-link" href="coming-soon.html" aria-label="Explore robotics and ai">
+                            Explore
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+                <article class="exhibition-space-card ecology-space">
+                <picture>
+                    <source media="(max-width: 767px)"
+                    srcset="images/exhibitions/exhibitions-ecology-mobile.webp">
+                    <img
+                        src="images/exhibitions/exhibitions-ecology.webp"
+                        alt="Ecology exhibition exploring nature and our changing planet"
+                        width="1606"
+                        height="900"
+                        loading="lazy"
+                    />
+                </picture>
+                
+                    <div class="exhibition-space-content">
+                        <p class="label">Ecology</p>
+                        <h3>Explore our changing planet</h3>
+                        <p>
+                            Discover how we can protect our planet and create
+                            a more sustainable future
+                        </p>
+                        <a class="text-link" href="coming-soon.html" aria-label="Explore ecology">
+                            Explore
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+                <article class="exhibition-space-card events-space">
+                <picture>
+                    <source media="(max-width: 767px)"
+                    srcset="images/exhibitions/exhibitions-special-events-mobile.webp">
+                    <img
+                        src="images/exhibitions/exhibitions-special-events.webp"
+                        alt="Visitors taking part in a special museum event"
+                        width="1606"
+                        height="905"
+                        loading="lazy"
+                    />
+                </picture>
+                    <div class="exhibition-space-content">
+                        <p class="label">Special Events</p>
+                        <h3>Something new to discover</h3>
+                        <p>
+                            Discover special lectures, family events and visiting
+                            exhibitions at the museum
+                        </p>
+                        <a class="text-link" href="#special-events" aria-label="Explore special events">
+                            Explore
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="exhibition-spaces" id="special-events">
+    <div class="container">
+        <div class="section-heading">
+            <p class="label">What's On</p>
+            <h2>Special Events and Exhibitions<span class="heading-dot heading-dot-purple" aria-hidden="true"></span></h2>
+        </div>
+        <div class="exhibition-space-cards">
+            <article class="exhibition-space-card event-featured">
+                <picture>
+                    <source
+                    media="(max-width: 767px)"
+                    srcset="images/exhibitions/exhibitions-special-events-mobile.webp"
+                    >
+                    <img
+                    src="images/exhibitions/exhibitions-special-events.webp"
+                    alt="Dinosaur exhibition prepared for a night in the museum"
+                    width="1606"
+                    height="905"
+                    loading="lazy"
+                    >
+                </picture>
+                <div class="exhibition-space-content">
+                    <p class="label">Family Sleepover</p>
+                    <h3>Night in the Museum</h3>
+                    <p>
+                        Get your family together for an exciting night in the museum as you sleep over beside dinosaurs and science displays. Bring your own sleeping bag and get ready to rough it as we go exploring the wonders of science.
+                    </p>
+                </div>
+            </article>
+            <div class="event-secondary">
+                <article class="exhibition-space-card event-lecture">
+                    <div class="exhibition-space-content">
+                        <p class="label">Guest Lectures</p>
+                        <h3>Visiting Professor of Aeronautics</h3>
+                        <p>
+                            It is our pleasure to announce that Prof Sheila Widnall from the Massachusetts Institute of Technology will be delivering 3 lectures on the development of aeronautics and where the future lies in this exciting 'space'.
+                        </p>
+                    </div>
+                </article>
+                <article class="exhibition-space-card event-energy">
+                    <div class="exhibition-space-content">
+                        <p class="label">Interactive Exhibition</p>
+                        <h3>Energetica Exhibition on Loan</h3>
+                        <p>
+                            On loan from the NEMO Science Museum in Amsterdam, the Energetica exhibition is coming to the Community Science Museum.
+                        </p>
+                        <p>
+                            It's a series of installations that allow visitors to experience the power of the elements as we harness them. From solar energy powering lighting, to 'Wind Island' that shows you how turbines are able to use and control wind to create power.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    </section>
+</main>
+
+    <section class="stay-connected">
+        <div class="container stay-connected-content">
+            <div>
+                <p class="label">Stay Connected</p>
+                <h2>Stay curious. Follow along.</h2>
+                <p>Follow the museum for news, events and discoveries</p>
+            </div>
+
+            <div class="social-links">
+                <a class="social-link instagram" href="coming-soon.html" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a class="social-link linkedin" href="coming-soon.html" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+                <a class="social-link youtube" href="coming-soon.html" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                </a>
+                <a class="social-link facebook" href="coming-soon.html" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <p class="footer-brand-name">COMMUNITY SCIENCE<br /> MUSEUM</p>
+                <p>Explore. Learn. Belong</p>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h2>EXPLORE</h2>
+                    <a href="explore.html">Explore</a>
+                    <a href="exhibitions.html">Exhibitions</a>
+                    <a href="coming-soon.html">Events</a>
+                    <a href="explore.html#kids">For Kids</a>
+                </div>
+                <div>
+                    <h2>VISIT</h2>
+                    <a href="visit.html">Plan your visit</a>
+                    <a href="visit.html#opening-hours">Opening hours</a>
+                    <a href="visit.html#admission">Admission</a>
+                    <a href="visit.html#accessibility">Accessibility</a>
+                </div>
+                <div>
+                    <h2>MUSEUM</h2>
+                    <a href="coming-soon.html">About us</a>
+                    <a href="get-involved.html">Get involved</a>
+                    <a href="get-involved.html#volunteer">Volunteer</a>
+                    <a href="get-involved.html#internships">Internships</a>
+                </div>
+            </div>
+            <div class="newsletter">
+                <h2>STAY IN THE LOOP</h2>
+                <p>Get museum news, events and discoveries in your inbox</p>
+                <form class="newsletter-form" action="coming-soon.html" method="get">
+                    <input
+                        type="email"
+                        placeholder="Email address"
+                        aria-label="Email address"
+                        required
+                    >
+                    <button type="submit">SUBSCRIBE</button>
+                </form>     
+                <p class="small-text">We respect your privacy</p>
+            </div>
+        </div>
+            <div class="container footer-bottom">
+                <div>
+                    <a href="coming-soon.html">Privacy Policy</a>
+                    <a href="coming-soon.html">Terms & Conditions</a>
+                </div>
+                <p>&copy; 2026 Community Science Museum</p>
+            </div>
+    </footer>
+</body>
+</html>

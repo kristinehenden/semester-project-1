@@ -8,7 +8,12 @@
     --color-purple: #6c4fd1;
     --color-green: #4ca771;
     --color-teal: #2e8b8b;
-    --color-yellow: #f4b730;
+    --color-yellow: #f4b740;
+
+    --color-coral-text: #b83f24;
+    --color-green-text: #287a49;
+    --color-teal-text: #216969;
+    --color-yellow-text: #856000;
 
     --space-1: 8px;
     --space-2: 16px;
@@ -111,6 +116,7 @@ p {
     gap: var(--space-1);
     color: var(--color-navy);
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .site-logo img {
@@ -141,6 +147,50 @@ p {
     background-color: var(--color-navy);
 }
 
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.mobile-menu summary::-webkit-details-marker {
+    display: none;
+}
+
+.mobile-nav {
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 180px;
+    padding: 20px;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(30, 42, 58, 0.15);
+}
+
+.mobile-nav a {
+    color: var(--color-navy);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.mobile-nav a.active {
+    color: var(--color-coral-text);
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-coral-text);
+    padding-bottom: 4px;
+    width: max-content;
+}
+
 /* Navigation */
 
 .main-nav {
@@ -148,19 +198,28 @@ p {
 }
 
 .main-nav a {
+    position: relative;
     color: var(--color-navy);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
 }
 
-.main-nav a.active {
-    border-bottom: 2px solid var(--color-coral);
+.main-nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    height: 2px;
+    background-color: var(--color-coral);
 }
+
 
 .search-bar {
     display: none;
 }
+
 /* Buttons and links */
 
 .btn-primary {
@@ -172,6 +231,7 @@ p {
     border-radius: 999px;
     font-weight: 600;
     font-size: 1rem;
+    text-transform: uppercase;
 }
 
 .btn-secondary {
@@ -184,6 +244,7 @@ p {
     font-weight: 600;
     font-size: 1rem;
     border: 1px solid var(--color-navy);
+    text-transform: uppercase;
 }
 
 .text-link {
@@ -193,13 +254,1729 @@ p {
     font-size: 1rem;
 }
 
+.fa-arrow-right {
+    font-size: 0.75rem;
+}
+
+/* HOME - Hero */
+
+.home-hero {
+    position: relative;
+    padding: var(--space-5) 0;
+}
+
+.hero-coral-decoration {
+    display: none;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.home-hero .label {
+    color: var(--color-purple);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.home-hero h1 {
+    margin-bottom: var(--space-2);
+}
+
+.hero-dot {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: var(--space-1);
+    border-radius: 50%;
+    background-color: var(--color-yellow);
+}
+
+.hero-stats {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+}
+
+.hero-star {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #eee9fa;
+    color: var(--color-purple);
+    font-size: 1.5rem;
+}
+
+.stat-number {
+    font-family: "Baloo 2", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-caption {
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.hero-description {
+    max-width: 20rem;
+    margin-bottom: var(--space-4);
+
+}
+.hero-visual {
+    position: relative;
+}
+
+.hero-image {
+    overflow: hidden;
+    border-radius: 32px;
+}
+
+.hero-badge {
+    --badge-color: var(--color-green);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background-color: var(--badge-color);
+    text-align: center;
+}
+
+.badge-text {
+    font-family: "Baloo 2", sans-serif;
+    font-size: 1rem;
+    line-height: 1.25;
+    font-weight: 400;
+    color: var(--color-navy);
+    text-transform: uppercase;
+}
+
+.badge-ray {
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    border-radius: 4px;
+    right: -34px;
+    background-color: var(--badge-color);
+}
+
+.badge-ray-one {
+    bottom: 30px;
+    transform: rotate(20deg);
+}
+
+.badge-ray-two {
+    bottom: 16px;
+    transform: rotate(35deg);
+}
+
+.explore-hero-badge,
+.exhibitions-hero-badge {
+    --badge-color: var(--color-teal)
+}
+
+.visit-hero-badge,
+.get-involved-hero-badge {
+    --badge-color: var(--color-yellow);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+/* HOME - Featured Exhibitions */
+
+.featured-exhibitions {
+    background-color: #ffffff;
+    padding: var(--space-5) 0;
+}
+
+.featured-exhibitions .section-heading {
+    margin-bottom: var(--space-3);
+}
+
+.featured-exhibitions .label {
+    color: var(--color-coral-text);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.exhibition-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+
+.exhibition-card {
+    border: 1px solid;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.exhibition-card img {
+    width: calc(100% - 16px);
+    margin: 8px 8px 0;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-content {
+    padding: var(--space-2);
+}
+
+.card-content .label {
+    margin-bottom: var(--space-1);
+}
+
+.cosmology-card {
+    border-color: var(--color-purple);
+    background-color: #eee9ff;
+}
+
+.cosmology-card .label {
+    color: var(--color-purple);
+}
+
+.evolution-card {
+    border-color: var(--color-green);
+    background-color: #e6f4ea;
+}
+
+.evolution-card .label {
+    color: var(--color-green-text);
+}
+
+.robotics-card {
+    border-color: var(--color-yellow);
+    background-color: #fff3d6;
+}
+
+.robotics-card .label {
+    color: var(--color-navy);
+}
+
+/* HOME - Museum for Everyone */
+
+.museum-for-everyone {
+    background-color: var(--color-navy);
+    color: var(--color-background);
+    padding: var(--space-5) 0;
+}
+
+.museum-for-everyone-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.museum-for-everyone-image {
+    overflow: hidden;
+    border-radius: 48px 12px 48px 48px;
+}
+
+.museum-for-everyone-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.museum-for-everyone-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+}
+
+.museum-for-everyone .label {
+    color: var(--color-green);
+    text-transform: uppercase;
+}
+
+.museum-for-everyone h2 {
+    color: var(--color-background);
+}
+
+.museum-for-everyone-text > p:not(.label) {
+    max-width: 34rem;
+}
+
+.museum-for-everyone .btn-secondary {
+    margin-top: var(--space-1);
+    background-color: var(--color-background);
+    color: var(--color-navy);
+    border-color: var(--color-background);
+}
+
+.museum-decoration {
+    display: none;
+}
+
+/* HOME - Plan your visit */
+
+.plan-visit {
+    background-color: var(--color-background);
+    padding: var(--space-5) 0;
+}
+
+.plan-visit .section-heading {
+    margin-bottom: var(--space-3);
+}
+
+.plan-visit .label {
+    color: var(--color-coral-text);
+    text-transform: uppercase;
+}
+
+.visit-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.visit-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    border: 1px solid;
+    border-radius: 12px;
+}
+
+.visit-card h3 {
+    margin-bottom: var(--space-1);
+}
+
+.visit-card p {
+    margin-bottom: var(--space-2);
+}
+
+.visit-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.opening-hours-card .visit-icon {
+    background-color: var(--color-purple);
+}
+
+.getting-here-card .visit-icon {
+    background-color: var(--color-green);
+}
+
+.admission-card .visit-icon {
+    background-color: var(--color-teal);
+}
+
+.plan-visit .opening-hours-card {
+    background-color: #eee9fa;
+    border-color: var(--color-purple);
+    margin-bottom: 0;
+}
+
+.getting-here-card {
+    background-color: #e5f2e9;
+    border-color: var(--color-green);
+}
+
+.admission-card {
+    background-color: #e5f3f3;
+    border-color: var(--color-teal);
+}
+
+/* EXPLORE - Hero */
+
+.explore-hero {
+    position: relative;
+    background-color: var(--color-background);
+    padding: var(--space-5) 0;
+    overflow: hidden;
+}
+
+.explore-hero .label {
+    color: var(--color-purple);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.explore-hero h1 {
+    margin-bottom: var(--space-2);
+}
+
+.explore-hero-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background-color: var(--color-teal);
+    color: #080f16;
+    text-align: center;
+    font-family: "Baloo 2", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+/* EXPLORE - For Kids */
+
+.explore-kids {
+    background-color: #f3efff;
+    padding: var(--space-5) 0;
+}
+
+.explore-kids-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.explore-kids-image {
+    position: relative;
+    overflow: visible;
+}
+
+.explore-kids-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px 48px 48px 48px;
+}
+
+.kids-image-decoration {
+    position: absolute;
+    top: -18px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+}
+
+.kids-image-decoration span {
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    border-radius: 4px;
+    background-color: var(--color-purple);
+    right: 0;
+}
+
+.kids-image-decoration span:nth-child(1) {
+    top: 0;
+    left: 24px;
+    transform: rotate(90deg);
+}
+
+.kids-image-decoration span:nth-child(2) {
+    top: 5px;
+    left: 5px;
+    transform: rotate(55deg);
+}
+
+.kids-image-decoration span:nth-child(3) {
+    top: 20px;
+    left: -5px;
+    transform: rotate(20deg);
+}
+
+.kids-image-decoration span:nth-child(4) {
+    top: 35px;
+    left: -8px;
+    transform: rotate(-8deg);
+}
+
+.explore-kids-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.explore-kids .label {
+    color: var(--color-purple);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.explore-kids h2 {
+    margin-bottom: var(--space-2);
+}
+
+.explore-kids-text > p:not(.label) {
+    max-width: 30rem;
+    margin-bottom: var(--space-3);
+}
+
+.kids-programs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.program-card {
+    padding: var(--space-2);
+    border: 1px solid;
+    border-radius: 12px;
+}
+
+.program-card:first-child {
+    background-color: #eee9fa;
+    border-color: var(--color-purple);
+}
+
+.program-card:last-child {
+    background-color: #e5f3f3;
+    border-color: var(--color-teal);
+}
+
+.program-card h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-1);
+
+}
+
+.program-card p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.program-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: var(--space-1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.25rem;
+}
+
+.purple-icon {
+    background-color: var(--color-purple);
+}
+
+.teal-icon {
+    background-color: var(--color-teal);
+}
+.heading-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: var(--space-1);
+    border-radius: 50%;
+}
+
+.heading-dot-yellow {
+    background-color: var(--color-yellow);
+}
+
+.heading-dot-green {
+    background-color: var(--color-green);
+}
+
+.heading-dot-purple {
+    background-color: var(--color-purple);
+}
+
+.explore-kids .heading-dot {
+    background-color: var(--color-teal);
+}
+
+/* EXPLORE - For Teachers */
+
+.explore-teachers {
+    background-color: var(--color-background);
+    padding: var(--space-4) 0;
+}
+
+.teachers-main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.teachers-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.explore-teachers .label {
+    color: var(--color-coral-text);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.explore-teachers h2 {
+    margin-bottom: var(--space-2);
+}
+
+.teachers-text > p:not(.label) {
+    max-width: 36rem;
+    margin-bottom: var(--space-3);
+}
+
+.teachers-image {
+    overflow: hidden;
+    border-radius: 48px 12px 48px 48px;
+}
+
+.teachers-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.teacher-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.teacher-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2);
+    border: 1px solid var(--color-green);
+    border-radius: 12px;
+    background-color: #eef8f2;
+    color: var(--color-navy);
+    text-decoration: none;
+}
+
+.teacher-option h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-1);
+}
+
+.teacher-option p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.explore-teachers .heading-dot {
+    background-color: var(--color-green);
+}
+
+.teacher-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--color-green);
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.teacher-option-text {
+    flex: 1;
+}
+
+.teacher-arrow {
+    margin-left: auto;
+    flex-shrink: 0;
+    font-size: 0.875rem;
+}
+
+/* EXPLORE - Researchers */
+
+.explore-researchers {
+    background-color: var(--color-navy);
+    color: var(--color-background);
+    padding: var(--space-5) 0;
+}
+
+.researchers-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.researchers-image {
+    overflow: hidden;
+    border-radius: 12px 48px 12px 48px;
+}
+
+.researchers-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.researchers-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.explore-researchers .label {
+    color: var(--color-green);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.explore-researchers h2 {
+    color: var(--color-background);
+    margin-bottom: var(--space-2);
+}
+
+.researchers-text > p:not(.label) {
+    max-width: 36rem;
+    margin-bottom: var(--space-3);
+}
+
+.explore-researchers .heading-dot {
+    background-color: var(--color-yellow);
+}
+
+.explore-researchers .btn-secondary {
+    background-color: var(--color-background);
+    color: var(--color-navy);
+    border-color: var(--color-background);
+}
+
+/* EXHIBITIONS - Hero */
+
+.exhibitions-hero {
+    position: relative;
+    background-color: var(--color-background);
+    padding: var(--space-5) 0;
+    overflow: hidden;
+}
+
+.exhibitions-hero .label {
+    color: var(--color-purple);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.exhibitions-hero h1 {
+    margin-bottom: var(--space-2);
+}
+
+.exhibitions-hero-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background-color: var(--color-teal);
+    text-align: center;
+    font-family: "Baloo 2", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.exhibitions-hero-badge .badge-text {
+     color: #080f16;
+}
+
+/* EXHIBITIONS - Exhibition Spaces */
+
+.exhibition-spaces {
+    background-color: #f3efff;
+    padding: var(--space-5) 0;
+}
+
+.exhibition-spaces .section-heading {
+    margin-bottom: var(--space-4);
+}
+
+.exhibition-spaces .section-heading .label {
+    color: var(--color-purple);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.exhibition-space-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.exhibition-space-card {
+    overflow: hidden;
+    border: 1px solid;
+    border-radius: 12px;
+}
+
+.exhibition-space-card img {
+    display: block;
+    width: calc(100% - 16px);
+    height: auto;
+    margin: 8px 8px 0;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.exhibition-space-content {
+    padding: var(--space-2);
+}
+
+.exhibition-space-content .label {
+    margin-bottom: var(--space-1);
+    text-transform: uppercase;
+}
+
+.exhibition-space-content h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: var(--space-1);
+}
+
+.exhibition-space-content > p:not(.label) {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin-bottom: var(--space-2);
+}
+
+/* Cosmology */
+
+.cosmology-space {
+    background-color: #eee9fa;
+    border-color: var(--color-purple);
+}
+
+.cosmology-space .label,
+.cosmology-space .text-link {
+    color: var(--color-purple);
+}
+
+/* Evolution */
+
+.evolution-space {
+    background-color: #e5f2e9;
+    border-color: var(--color-green);
+}
+
+.evolution-space .label,
+.evolution-space .text-link {
+    color: var(--color-green-text);
+}
+
+/* Biology & Medicine */
+
+.biology-space {
+    background-color: #e5f3f3;
+    border-color: var(--color-teal);
+}
+
+.biology-space .label,
+.biology-space .text-link {
+    color: var(--color-teal-text);
+}
+
+/* Robotics & AI */
+
+.robotics-space {
+    background-color: #fffcf5;
+    border-color: var(--color-yellow);
+}
+
+.robotics-space .label,
+.robotics-space .text-link {
+    color: var(--color-yellow-text);
+}
+
+/* Ecology */
+
+.ecology-space {
+    background-color: #e5f2e9;
+    border-color: var(--color-green);
+}
+
+.ecology-space .label,
+.ecology-space .text-link {
+    color: var(--color-green-text);
+}
+
+/* Special Events */
+
+.events-space {
+    background-color: #f8eeeb;
+    border-color: var(--color-coral);
+}
+
+.events-space .label,
+.events-space .text-link {
+    color: var(--color-coral-text);
+}
+
+#special-events {
+    background-color: var(--color-background);
+}
+
+#special-events .label {
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+#special-events .exhibition-space-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+#special-events .event-secondary {
+    display: grid;
+    gap: 24px;
+}
+
+#special-events .event-featured {
+    background-color: #f8eeeb;
+    border-color: var(--color-coral);
+}
+
+#special-events .event-featured .label {
+    color: var(--color-coral-text);
+}
+
+#special-events .event-lecture {
+    background-color: #eee9fa;
+    border-color: var(--color-purple);
+}
+
+#special-events .event-lecture .label {
+    color: var(--color-purple)
+}
+
+#special-events .event-energy {
+    background-color: #e6f4ea;
+    border-color: var(--color-green);
+}
+
+#special-events .event-energy .label {
+    color: var(--color-green-text);
+}
+
+#special-events .exhibition-space-content {
+    padding: 24px;
+}
+
+#special-events .exhibition-space-content h3 {
+    font-family: "Baloo 2", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+#special-events .exhibition-space-content > p:not(.label) {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+#special-events .exhibition-space-content p + p {
+    margin-top: 12px;
+}
+
+/* Visit Hero */
+
+.visit-hero {
+    position: relative;
+    background-color: var(--color-background);
+    padding: var(--space-5) 0;
+    overflow: hidden;
+}
+
+.visit-hero .label {
+    color: var(--color-coral-text);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.visit-hero h1 {
+    margin-bottom: var(--space-2);
+    text-transform: uppercase;
+}
+
+.visit-hero .btn-secondary {
+    margin-top: var(--space-1);
+}
+
+.visit-hero-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background-color: var(--color-yellow);
+    color: var(--color-navy);
+    text-align: center;
+    font-family: "Baloo 2", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.visit-label-mobile {
+    display: none;
+}
+
+/* Visit - Location */
+
+.visit-information {
+    background-color: #ffffff;
+    padding: var(--space-5) 0;
+}
+
+.visit-location {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.visit-location .label {
+    color: var(--color-green-text);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.visit-location h2 {
+    margin-bottom: var(--space-2);
+}
+
+.visit-location .heading-dot {
+    background-color: var(--color-green);
+}
+
+.visit-info-text {
+    max-width: 34rem;
+    margin-bottom: var(--space-3);
+}
+
+.location-decoration {
+    position: absolute;
+    top: 130px;
+    right: -30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--color-coral);
+    z-index: 0;
+}
+
+.location-decoration span {
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    border-radius: 4px;
+    background-color: var(--color-coral);
+    right: -30px;
+}
+
+.location-decoration span:nth-child(1) {
+    top: 5px;
+    right: -25px;
+    transform: rotate(-45deg);
+}
+
+.location-decoration span:nth-child(2) {
+    top: 22px;
+    right: -34px;
+    transform: rotate(-15deg);
+}
+
+.visit-map {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 48px 12px 48px 12px;
+    margin-bottom: var(--space-2);
+}
+
+.visit-map img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.location-details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.location-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #e5f2e9;
+}
+
+.location-icon,
+.admission-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-green);
+    font-size: 1.1rem;
+}
+
+.location-details h3 {
+    font-size: 1rem;
+}
+
+.location-details p {
+    font-size: 0.875rem;
+}
+.location-details .btn-secondary {
+    margin-left: auto;
+    padding: 10px var(--space-2);
+    font-size: 0.875rem;
+}
+
+/* Visit - Admission */
+
+.visit-admission {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: var(--space-5);
+}
+
+.visit-admission .label {
+    color: var(--color-coral-text);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.visit-admission h2 {
+    margin-bottom: var(--space-2);
+}
+
+.visit-admission .heading-dot {
+    background-color: var(--color-yellow);
+}
+
+.admission-options {
+    width: 100%;
+    max-width: 390px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+}
+
+.admission-option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2);
+    border: 1px solid var(--color-green);
+    border-radius: 12px;
+    background-color: #eef8f2;
+    color: var(--color-navy);
+    text-decoration: none;
+}
+
+.admission-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #d9f0df;
+}
+
+.admission-option h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-1);
+}
+
+.admission-option p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.admission-option p + p {
+    margin-top: 8px;
+}
+
+.admission-arrow {
+    margin-left: auto;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+/* Visit - Opening Hours */
+
+.visit-planning {
+    background-color: #e9e5f8;
+    padding: var(--space-5) 0;
+}
+
+.opening-hours {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.opening-hours .label {
+    color: var(--color-purple);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.opening-hours h2 {
+    margin-bottom: var(--space-2);
+}
+
+.opening-hours .heading-dot {
+    background-color: var(--color-purple);
+}
+
+.opening-hours .visit-info-text {
+    max-width: 18rem;
+}
+
+.opening-hours-card {
+    width: 100%;
+    border: 1px solid var(--color-purple);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffffff;
+    margin-bottom: var(--space-3);
+}
+
+.opening-hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px var(--space-3);
+    border-bottom: 1px solid #ded8ef;
+    font-size: 0.875rem;
+}
+
+.opening-hours-row:last-child {
+    border-bottom: none;
+}
+
+.special-hours {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.special-hours-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #ded5fb;
+}
+
+.special-hours h3 {
+    font-size: 1rem;
+}
+
+.special-hours p{
+    font-size: 0.875rem;
+}
+
+.special-hours .btn-secondary {
+    margin-left: auto;
+    padding: 10px var(--space-2);
+    font-size: 0.875rem;
+    background-color: #ffffff;
+}
+
+.planning-decoration {
+    display: none;
+}
+
+/* Visit - Accessibility */
+
+.visit-accessibility {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: var(--space-5);
+}
+
+.visit-accessibility h2 {
+    margin-bottom: var(--space-2);
+}
+
+.visit-accessibility .label {
+    color: #246b40;
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.visit-accessibility .heading-dot {
+    background-color: var(--color-green);
+}
+
+.accessibility-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.accessibility-item,
+.assistance-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.accessibility-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #ded6fa;
+}
+
+.special-hours-icon,
+.accessibility-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-purple);
+    font-size: 1.3rem;
+}
+
+.accessibility-item h3,
+.assistance-card h3 {
+    font-size: 1rem;
+}
+
+.accessibility-item p,
+.assistance-card p {
+    font-size: 0.875rem;
+}
+
+.assistance-card {
+    margin-top: var(--space-4);
+    padding: var(--space-2);
+    width: 100%;
+    background-color: #ded6fa;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.assistance-card .accessibility-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: var(--color-purple);
+    color: #ded5fb;
+}
+
+/* Visit - More to Explore */
+
+.visit-more {
+    background-color: var(--color-background);
+    padding: var(--space-5) 0;
+}
+
+.visit-more .section-heading {
+    margin-bottom: var(--space-3);
+}
+
+.visit-more .section-heading .label {
+    color: var(--color-coral-text);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.visit-more .heading-dot {
+    background-color: var(--color-yellow);
+}
+
+.visit-more-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+}
+
+.visit-more-card {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.visit-more-card img {
+    display: block;
+    width: calc(100% - 16px);
+    height: auto;
+    margin: 8px 8px 0;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.visit-more-content {
+    padding: var(--space-2);
+}
+
+.visit-more-content .label {
+    text-transform: uppercase;
+}
+
+.visit-more h3 {
+    margin-bottom: var(--space-1);
+}
+
+.visit-more-content > p:not(.label) {
+    margin-bottom: var(--space-2);
+}
+
+.food-card {
+    background-color: rgba(76, 167, 113, 0.08);
+    border: 1px solid var(--color-green);
+}
+
+.food-card .label,
+.food-card .text-link {
+    color: var(--color-green);
+}
+
+.shop-card {
+    background-color: rgba(108, 79, 209, 0.08);
+    border: 1px solid var(--color-purple);
+}
+
+.shop-card .label,
+.shop-card .text-link {
+    color: var(--color-purple);
+}
+
+.opening-hours,
+.visit-accessibility {
+    scroll-margin-top: 110px;
+}
+
+/* GET INVOLVED - Hero */
+
+.get-involved-hero {
+    position: relative;
+    background-color: var(--color-background);
+    padding: var(--space-5) 0;
+    overflow: hidden;
+}
+
+.get-involved-hero .label {
+    color: var(--color-coral-text);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.get-involved-hero h1 {
+    margin-bottom: var(--space-2);
+}
+
+.get-involved-hero-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background-color: var(--color-yellow);
+    color: var(--color-navy);
+    text-align: center;
+    font-family: "Baloo 2", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+/* GET INVOLVED - Support the museum */
+
+.support-museum {
+    background-color: #ffffff;
+    padding: var(--space-5) 0;
+}
+
+.support-museum-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.support-image {
+    position: relative;
+    overflow: visible;
+}
+
+.support-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 12px 48px 48px 12px;
+}
+
+.support-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.support-museum .label {
+    color: var(--color-coral-text);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.support-museum h2 {
+    margin-bottom: var(--space-2);
+}
+
+.support-museum .heading-dot {
+    background-color: var(--color-yellow);
+}
+
+.support-text > p:not(.label) {
+    max-width: 34rem;
+    margin-bottom: var(--space-3);
+}
+
+.support-options {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.support-option {
+    padding: var(--space-2);
+    border: 1px solid;
+    border-radius: 12px;
+}
+
+.support-option-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.support-option:first-child {
+    background-color: #eee9fa;
+    border-color: var(--color-purple);
+}
+
+.support-option:last-child {
+    background-color: #e5f3f3;
+    border-color: var(--color-teal);
+}
+
+.support-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: var(--space-1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.3rem;
+}
+
+.support-option:first-child .support-icon {
+    background-color: var(--color-purple);
+}
+
+.support-option:last-child .support-icon {
+    background-color: var(--color-teal);
+}
+
+.support-option h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-1);
+}
+
+.support-option p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.support-option p + p {
+    margin-top: 8px;
+}
+
+/* GET INVOLVED - Volunteer */
+
+.volunteer-section {
+    position: relative;
+    overflow: hidden;
+    background-color: #f3efff;
+    padding: var(--space-5) 0;
+}
+
+.volunteer-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.volunteer-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.volunteer-section .label {
+    color: var(--color-purple);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.volunteer-section h2 {
+    margin-bottom: var(--space-2);
+}
+
+.volunteer-section .heading-dot {
+    background-color: var(--color-purple);
+}
+
+.volunteer-text p:not(.label) {
+    max-width: 34rem;
+    margin-bottom: var(--space-2);
+}
+
+.volunteer-text .btn-secondary {
+    margin-top: var(--space-2);
+    color: var(--color-purple);
+    border-color: var(--color-purple);
+    background-color: transparent;
+}
+
+.volunteer-image {
+    overflow: hidden;
+    border-radius: 48px 12px 48px 12px;
+}
+
+.volunteer-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.volunteer-decoration {
+    display: none;
+}
+
+/* GET INVOLVED - Internships */
+
+.internship-section {
+    background-color: var(--color-background);
+    padding: var(--space-5) 0;
+}
+
+.internship-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.internship-image {
+    overflow: hidden;
+    border-radius: 12px 48px 48px 12px;
+}
+
+.internship-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.internship-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.internship-section .label {
+    color: var(--color-green-text);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+}
+
+.internship-section h2 {
+    margin-bottom: var(--space-2);
+}
+
+.internship-section .heading-dot {
+    background-color: var(--color-green);
+}
+
+.internship-text > p:not(.label) {
+    max-width: 34rem;
+    margin-bottom: var(--space-3);
+}
+
+.internship-section .btn-secondary {
+    color: var(--color-green-text);
+    border-color: var(--color-green);
+    background-color: transparent;
+}
+
 /* Stay Connected */
 
 .stay-connected {
     background-color: #ffffff;
     padding: var(--space-5) 0;
 }
-.stay-connected content {
+.stay-connected-content {
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
@@ -208,7 +1985,7 @@ p {
     font-size: 1.5rem;
 }
 .stay-connected .label {
-    color: var(--color-purple)
+    color: var(--color-purple);
     text-transform: uppercase;
 }
 .social-links {
@@ -216,7 +1993,47 @@ p {
     gap: var(--space-2);
 }
 
+.social-link {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.social-link.instagram {
+    background-color: #eee9fa;
+    color: var(--color-purple);
+}
+
+.social-link.linkedin {
+    background-color: #e5f2e9;
+    color: var(--color-green);
+}
+
+.social-link.youtube {
+    background-color: #e5f3f3;
+    color: var(--color-teal);
+}
+
+.social-link.facebook {
+    background-color: #fde7df;
+    color: var(--color-coral);
+}
+
 /* Footer */
+
+.footer-brand .footer-brand-name {
+    font-family: "Baloo 2", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.33;
+    font-weight: 600;
+    color: var(--color-background);
+}
 
 .site-footer {
     background-color: var(--color-navy);
@@ -228,6 +2045,7 @@ p {
     flex-direction: column;
     gap: var(--space-4);
 }
+.site-footer h2,
 .site-footer h3 {
     color: var(--color-background);
 }
@@ -273,6 +2091,7 @@ p {
     background-color: var(--color-yellow);
     color: var(--color-navy);
     font-weight: 600;
+    cursor: pointer;
 }
 .footer-bottom {
     display: flex;
@@ -280,7 +2099,7 @@ p {
     gap: var(--space-2);
     margin-top: var(--space-4);
     padding-top: var(--space-3);
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
 }
 .footer-bottom > div {
     display: flex;
@@ -288,26 +2107,1027 @@ p {
     gap: var(--space-1);
 }
 
-/* Desktop */
+.site-footer h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+/* Shared Hero Dot Colors */
+
+.visit-hero .hero-dot,
+.get-involved-hero .hero-dot {
+    background-color: var(--color-green);
+}
+
+    /* Coming Soon */
+
+    .coming-soon-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 64px 24px;
+        background-color: var(--color-background);
+        overflow: hidden;
+    }
+
+    .coming-soon-card {
+        width: 100%;
+        max-width: 1000px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 64px;
+        padding: 64px;
+        border-radius: 32px 12px 32px 12px;
+        background-color: #e9e5f8;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .coming-soon-content {
+        position: relative;
+        z-index: 2;
+        max-width: 480px;
+    }
+
+    .coming-soon-content .label {
+        columns: var(--color-coral);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .coming-soon-content h1 {
+        margin-bottom: 20px;
+    }
+
+    .coming-soon-content > p:not(.label) {
+        margin-bottom: 28px;
+    }
+
+    .coming-soon-visual {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 280px;
+        height: 320px;
+        overflow: visible;
+        pointer-events: none;
+    }
+
+    .coming-soon-orbit {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 100px;
+        left: 140px;
+        border: 1px dashed var(--color-purple);
+        border-radius: 50%;
+    }
+
+    .coming-soon-circle {
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    .coming-soon-circle-purple {
+        width: 220px;
+        height: 220px;
+        top: 160px;
+        left: 200px;
+        background-color: #ded6fa;
+    }
+
+    .coming-soon-circle-green {
+        width: 20px;
+        height: 20px;
+        top: 144px;
+        left: 144px;
+        background-color: var(--color-green);
+    }
+
+    .coming-soon-circle-yellow {
+        width: 56px;
+        height: 56px;
+        top: 20px;
+        left: 170px;
+        background-color: var(--color-yellow);
+    }
+
+    .coming-soon-content h1 .heading-dot {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-left: 6px;
+        border-radius: 50%;
+        background-color: var(--color-purple);
+    }
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+
+/* Hero */
+
+  :is(
+    .home-hero,
+    .explore-hero,
+    .exhibitions-hero,
+    .visit-hero,
+    .get-involved-hero
+  ) {
+    padding: 44px 0 72px;
+  }
+
+   :is(
+    .home-hero,
+    .explore-hero,
+    .exhibitions-hero,
+    .visit-hero,
+    .get-involved-hero
+  ) h1 {
+    font-size: 2.25rem;
+    line-height: 1.06;
+    margin-bottom: 32px;
+  }
+
+   :is(
+    .home-hero,
+    .explore-hero,
+    .exhibitions-hero,
+    .visit-hero,
+    .get-involved-hero
+  ) .hero-description {
+    margin-bottom: 24px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .home-hero .hero-content {
+    gap: 16px;
+  }
+
+  .hero-stats {
+    margin-top: 28px;
+    margin-bottom: 0;
+  }
+  
+  .hero-visual {
+    position: relative;
+    width: 100%;
+  }
+
+  .hero-image {
+    overflow: hidden;
+    border-radius: 220px 48px 48px 220px;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+   :is(
+    .hero-badge,
+    .explore-hero-badge,
+    .exhibitions-hero-badge,
+    .visit-hero-badge,
+    .get-involved-hero-badge
+  ) {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: auto;
+    right: auto;
+    left: 10px;
+    bottom: 10px;
+    transform: none;
+    z-index: 1;
+  }
+
+  .badge-text {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #ffffff;
+  }
+
+  .visit-hero .badge-text,
+  .get-involved-hero .badge-text {
+    color: var(--color-navy);
+  }
+
+  .badge-ray {
+    width: 30px;
+    height: 4px;
+  }
+
+  .badge-ray-one {
+    bottom: 1px;
+    right: -16px;
+  }
+
+  .badge-ray-two {
+    bottom: -16px;
+    right: 1px;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: relative;
+  }
+
+  /* Visit */
+
+  .visit-hero-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .visit-hero-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #d9f0df;
+    color: var(--color-green);
+    font-size: 1.3rem;
+  }
+
+  .visit-hero-info-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .visit-hero-info-text {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  .visit-hero .hero-dot {
+    background-color: var(--color-green);
+  }
+
+  .visit-hero .btn-primary,
+  .visit-hero .btn-secondary {
+    text-transform: uppercase;
+    width: 240px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .visit-hero .btn-secondary {
+    margin-top: 12px;
+  }
+
+  .visit-label-desktop{
+    display: none;
+  }
+
+  .visit-label-mobile {
+    display: inline;
+  }
+
+  .visit-hero h1 {
+    text-transform: none;
+  }
+
+  .visit-hero {
+    padding-bottom: 16px;
+  }
+
+  .visit-information {
+    padding-top: 64px;
+  }
+  
+  .visit-location h2,
+  .visit-admission h2 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .visit-location .location-decoration {
+    display: none;
+  }
+
+  .visit-map img {
+    aspect-ratio: 10 / 7;
+    object-fit: cover;
+  }
+
+  .visit-location .btn-secondary {
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .visit-admission .admission-option {
+    border: none;
+    padding: 20px;
+  }
+
+  .admission-option h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .visit-planning {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .visit-planning .planning-decoration {
+    display: block;
+    position: absolute;
+    right: -150px;
+    bottom: 390px;
+    width: 230px;
+    height: 230px;
+    pointer-events: none;
+  }
+
+  .visit-planning .planning-orbit {
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    width: 230px;
+    height: 230px;
+    border: 1px dashed var(--color-purple);
+    border-radius: 50%;
+  }
+
+  .visit-planning .planning-circle {
+    position: absolute;
+    right: 60px;
+    bottom: 20px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #ded6fa;
+  }
+
+  .visit-planning .planning-dot-green {
+    position: absolute;
+    display: block;
+    z-index: 3;
+    width: 20px;
+    height: 20px;
+    top: 40px;
+    left: -50px;
+    border-radius: 50%;
+    background-color: var(--color-green);
+  }
+  
+  .visit-planning .planning-dot-yellow {
+    position: absolute;
+    display: block;
+    z-index: 3;
+    width: 20px;
+    height: 20px;
+    top: 125px;
+    left: -20px;
+    border-radius: 50%;
+    background-color: var(--color-yellow);
+  }
+
+  .special-hours {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .special-hours .btn-secondary {
+    flex-basis: auto;
+    margin-left: 0;
+    margin-top: 12px;
+    white-space: nowrap;
+    background-color: #e9e5f8;
+  }
+
+  .visit-more h2 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .opening-hours,
+  .visit-accessibility {
+    scroll-margin-top: 72px;
+  }
+
+    /* Featured Exhibitions */
+
+    .featured-exhibitions h2 {
+        font-size: 1.75rem;
+    }
+    
+    .featured-exhibitions .exhibition-card img {
+        height: auto;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .featured-exhibitions .card-content {
+        padding: 24px;
+    }
+
+    .featured-exhibitions .card-content .label {
+        margin-bottom: 12px;
+    }
+
+    .featured-exhibitions .card-content h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 1.125rem;
+        font-weight: 600;
+        line-height: 1.4;
+    }
+
+    /* Museum for Everyone */
+
+
+    .museum-for-everyone-image {
+        border-radius: 96px 24px 24px 96px;
+    }
+
+    .museum-for-everyone h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .museum-for-everyone-text > p:not(.label) {
+        font-weight: 400;
+        max-width: 30ch;
+    }
+
+    .museum-for-everyone {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .museum-decoration {
+        display: block;
+        position: absolute;
+        right: -90px;
+        bottom: -80px;
+        width: 240px;
+        height: 240px;
+        pointer-events: none;
+    }
+
+    .museum-decoration .museum-orbit {
+        position: absolute;
+        border: 2px solid var(--color-background);
+        border-radius: 50%;
+    }
+
+    .museum-decoration .orbit-outer {
+        width: 240px;
+        height: 240px;
+        right: 0;
+        bottom: 0;
+    }
+
+    .museum-decoration .orbit-inner {
+        width: 170px;
+        height: 170px;
+        right: 35px;
+        bottom: 35px;
+    }
+
+    .museum-decoration .orbit-dot {
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+    }
+
+    .museum-decoration .purple-dot {
+        width: 24px;
+        height: 24px;
+        background-color: var(--color-purple);
+        top: 80px;
+        left: -8px;
+    }
+
+    .museum-decoration .yellow-dot {
+        width: 10px;
+        height: 10px;
+        background-color: var(--color-yellow);
+        top: 4px;
+        left: 40px;
+    }
+
+    /* Plan your visit */
+
+    .plan-visit h2 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+    }
+
+    .plan-visit .section-heading > .label {
+        margin-bottom: 8px;
+    }
+
+    .plan-visit .section-heading {
+        margin-bottom: 36px;
+    }
+
+    .plan-visit .visit-cards {
+        gap: 24px;
+    }
+
+    .plan-visit .visit-card {
+        padding: 24px;
+        gap: 16px;
+    }
+
+    .plan-visit .visit-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.75rem;
+    }
+
+    .plan-visit .visit-card h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 1.125rem;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 12px;
+    }
+
+    .plan-visit .visit-card p {
+        margin-bottom: 12px;
+    }
+
+    /* Researchers */
+
+     .explore-researchers {
+        position: relative;
+        overflow: hidden;
+     }
+
+     .explore-researchers .museum-decoration {
+        bottom: -112px;
+     }
+
+     /* Get Involved */ 
+
+     .get-involved-hero .hero-dot {
+        background-color: var(--color-green);
+     }
+
+     .volunteer-section .heading-dot {
+        background-color: var(--color-purple);
+     }
+
+    /* Stay Connected */
+
+    .stay-connected {
+        padding: 48px 0;
+    }
+    
+    .stay-connected .label {
+        margin-bottom: 12px;
+    }
+
+    .stay-connected h2 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .stay-connected p:not(.label) {
+        max-width: 28ch;
+        font-weight: 400;
+    }
+
+    .stay-connected-content {
+        gap: 32px;
+    }
+
+    .stay-connected .social-links {
+        gap: 16px;
+    }
+
+    .stay-connected .social-link {
+        width: 48px;
+        height: 48px;
+        font-size: 1.875rem;
+    }
+
+    /* Coming Soon - Mobile */
+
+    .coming-soon-page {
+        padding: 32px 16px;
+    }
+
+    .coming-soon-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 32px 24px;
+    }
+
+    .coming-soon-visual {
+        display: none;
+    }
+}
+
+    /* Footer - Mobile and Tablet */
+    @media (max-width: 1023px) {
+
+    .site-footer {
+        padding: 40px 0;
+        font-weight: 400;
+    }
+
+    .footer-content {
+        gap: 24px;
+    }
+
+    .footer-brand {
+        gap: 12px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .footer-brand .footer-brand-name {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        font-weight: 600;
+    }
+
+    .footer-brand p {
+        font-weight: 400;
+    }
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        row-gap: 36px;
+        column-gap: 24px;
+    }
+
+    .footer-links > div {
+        gap: 16px;
+    }
+
+    .footer-links h2 {
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .footer-links a {
+        font-weight: 400;
+    }
+
+    .footer-links > div:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    .newsletter {
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+        margin-top: 12px;
+    }
+    
+    .newsletter h2 {
+        font-family: "Inter", sans-serif;
+        font-size: 1.125rem;
+        font-weight: 600;
+    }
+
+    .newsletter > p {
+        max-width: 28ch;
+        font-weight: 400;
+    }
+
+    .newsletter-form {
+        width: 100%;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .newsletter-form input {
+        width: 232px;
+        max-width: 100%;
+        height: 48px;
+        padding: 0 20px;
+        border: none;
+        background-color: var(--color-background);
+        color: var(--color-navy);
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .newsletter-form input::placeholder {
+        color: var(--color-navy);
+        opacity: 1;
+    }
+
+    .newsletter-form button {
+        min-height: 48px;
+        padding: 12px 28px;
+        font-weight: 400;
+    }
+
+    .footer-bottom {
+        gap: 28px;
+        margin-top: 36px;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 0.875rem;
+        font-weight: 400;
+    }
+
+    .footer-bottom::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 24px;
+        right: 24px;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .footer-bottom > div {
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 12px 24px;
+    }
+
+}
+
+/* TABLET */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+    }
+
+    .mobile-menu {
+        display: block;
+        position: relative;
+    }
+
+    /* Hero */
+    .hero-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-4);
+    }
+
+    .hero-text {
+        width: 42%;
+    }
+
+    .hero-visual {
+        width: 52%;
+    }
+
+    .hero-image {
+        border-radius: 50%;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    .hero-badge,
+    .explore-hero-badge,
+    .exhibitions-hero-badge,
+    .visit-hero-badge,
+    .get-involved-hero-badge {
+        width: 100px;
+        height: 100px;
+        top: auto;
+        right: auto;
+        bottom: 0;
+        left: 0;
+        transform: none;
+    }
+    /* Featured exhibitions */
+
+    .exhibition-cards {
+        flex-direction: row;
+        gap: var(--space-2);
+    }
+
+    .exhibition-card {
+        flex: 1;
+    }
+
+    .exhibition-card img {
+        width: calc(100% - 16px);
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+
+    /* Museum for everyone */
+
+    .museum-for-everyone-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: var(--space-4);
+    }
+
+    .museum-for-everyone-image {
+        width: 50%;
+    }  
+
+    .museum-for-everyone-text {
+        width: 45%;
+    }
+
+    /* Location & Admission */
+
+    .visit-location .location-decoration {
+        display: none;
+    }
+
+    .visit-admission {
+        width: 100%;
+    }
+
+    .admission-options {
+        max-width: none;
+    }
+
+    /* Footer Mobile */
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .footer-brand {
+        width: 100%;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .footer-links {
+        width: 100%;
+        display: grid;
+        margin-top: 8px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-links > div {
+        text-align: center;
+    }
+
+    .footer-links > div:last-child {
+        grid-column: auto;
+        justify-self: auto;
+    }
+
+    .newsletter {
+        width: 100%;
+        margin: 0;
+        margin-top: 8px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .newsletter-form {
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .newsletter-form input {
+        width: 232px;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 24px;
+        padding-top: 20px;
+        text-align: left;
+    }
+}
+
+/* DESKTOP */
 
 @media (min-width: 1024px) {
+   
+    /* Header */
+
+    .site-header {
+        padding: 0;
+    }
+
+    .header-content {
+        height: 104px;
+    }
+
+    .site-logo {
+        gap: 12px;
+    }
+
+    .site-logo img {
+        width: 48px;
+        height: 48px;
+    }
+
     .main-nav {
         display: flex;
         align-items: center;
-        gap: var(--space-4);
+        gap: 32px;
     }
 
     .search-bar {
         display: flex;
         align-items: center;
-        gap: var(--space-1);
-        padding: var(--space-1) var(--space-2);
+        gap: 8px;
+        width: 220px;
+        height: 44px;
+        padding: 4px;
         border: 1px solid var(--color-navy);
         border-radius: 999px;
-        font-size: 0.875rem;
+        background-color: #ffffff;
     }
 
-    .stay-connected content {
+    .search-bar input {
+        flex: 1;
+        min-width: 0;
+        width: 100%;
+        padding: 4px;
+        border: none;
+        border-radius: 999px;
+        background: transparent;
+        color: var(--color-navy);
+        font: inherit;
+        font-size: 1rem;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    .search-bar input:focus {
+        outline: none;
+    }
+
+    .search-bar:focus-within {
+        outline: 2px solid var(--color-purple);
+        outline-offset: 3px;
+    }
+
+    .search-bar > i {
+        flex-shrink: 0;
+        color: var(--color-navy);
+        font-size: 1rem;
+    }
+
+    /* For teachers */
+
+    .teachers-image {
+        border-radius: 72px 16px 16px 16px;
+    }
+
+    .teachers-image img {
+        aspect-ratio: 2 / 1;
+        object-fit: cover;
+    }
+
+    /* Researchers */
+
+    .researchers-image {
+        border-radius: 24px;
+    }
+
+    .researchers-image img{
+        aspect-ratio: 2.35 / 1;object-fit: cover;
+    }
+
+    /* Stay Connected */
+
+    .stay-connected-content {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -317,30 +3137,732 @@ p {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
+        gap: var(--space-5);
+    }
+
+    .footer-brand {
+        width: 20%
     }
 
     .footer-links {
+        width: 36%;
         flex-direction: row;
+        justify-content: space-between;
         gap: var(--space-5);
+    }
+
+    .newsletter {
+        width: 32%;
+        margin-left: var(--space-4);
     }
 
     .newsletter-form {
         flex-direction: row;
+        align-items: center;
+        gap: var(--space-2);
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        min-width: 0;
+        height: 48px;
+        padding: 0 var(--space-2);
+        background-color: var(--color-background);
+        color: var(--color-navy);
+        border: none;
+    }
+
+    .newsletter-form input::placeholder {
+        color: var(--color-text-secondary);
+    }
+
+    .newsletter-form button {
+        height: 48px;
+        padding: 0 var(--space-3);
+        white-space: nowrap;
+    }
+
+    .site-footer {
+        height: 360px;
+        padding: var(--space-5) 0 var(--space-3);
+        display: flex;
+        flex-direction: column;
     }
 
     .footer-bottom {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        margin-top: 96px;
+        padding-top: 56px;
+    }
+
+    .footer-bottom::before {
+        content: "";
+        position: absolute;
+        top: 24px;
+        left: 80px;
+        right: 80px;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.3);
     }
 
     .footer-bottom > div {
         flex-direction: row;
-        gap: var(--space-3);
+        gap: var(--space-4);
     }
-
 
     .menu-toggle {
         display: none;
     }
+
+    .home-hero {
+        height: 600px;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .hero-coral-decoration {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -30px;
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background-color: var(--color-coral);
+    }
+
+    .hero-coral-decoration span {
+        position: absolute;
+        left: 78px;
+        width: 16px;
+        height: 2px;
+        background-color: var(--color-coral);
+    }
+
+    .hero-coral-decoration span:nth-child(1) {
+        top: 18px;
+    }
+
+    .hero-coral-decoration span:nth-child(2) {
+        top: 30px;
+        transform: rotate(10deg);
+    }
+
+    .hero-coral-decoration span:nth-child(3) {
+        top: 42px;
+        transform: rotate(20deg);
+    }
+
+    .hero-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .hero-text {
+        width: 34%;
+    }
+
+    .hero-visual {
+        width: 62%;
+    
+    }
+    .hero-image {
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    .hero-badge {
+        top: 78%;
+        left: 88%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+    }
+
+    .hero-image img {
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .home-hero h1 {
+        font-size: 4rem;
+        line-height: 1;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding-left: 96px;
+        padding-right: 96px;
+    }
+
+    .exhibition-cards {
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-3);
+    }
+
+    .exhibition-card {
+        flex: 1;
+    }
+
+    .exhibition-card img {
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .museum-for-everyone-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 110px;
+    }
+
+    .museum-for-everyone-image {
+        width: 48%;
+    }
+
+    .museum-for-everyone-text {
+        width: 42%;
+    }
+
+    .museum-for-everyone h2 {
+        font-size: 2.25rem;
+        line-height: 1.2;
+    }
+
+    .museum-for-everyone {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .museum-decoration {
+        display: block;
+        position: absolute;
+        right: -90px;
+        bottom: -80px;
+        width: 280px;
+        height: 280px;
+    }
+
+    .museum-orbit {
+        position: absolute;
+        border: 2px solid var(--color-background);
+        border-radius: 50%;
+    }
+
+    .orbit-outer {
+        width: 280px;
+        height: 280px;
+        right: 0;
+        bottom: 0;
+    }
+
+    .orbit-inner {
+        width: 210px;
+        height: 210px;
+        right: 35px;
+        bottom: 35px;
+    }
+
+    .orbit-dot {
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+    }
+
+    .purple-dot {
+        width: 28px;
+        height: 28px;
+        background-color: var(--color-purple);
+        top: 90px;
+        left: -10px;
+    }
+
+    .yellow-dot {
+        width: 14px;
+        height: 14px;
+        background-color: var(--color-yellow);
+        top: -8px;
+        left: 92px;
+    }
+
+    .visit-cards {
+        flex-direction: row;
+        align-items: stretch;
+        gap: var(--space-3);
+    }
+
+    .visit-card {
+        flex: 1;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+        line-height: 1.2;
+    }
+
+    .explore-kids {
+        padding: var(--space-5) 0;
+    }
+
+    .explore-kids-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-5);
+    }
+
+    .explore-kids-image {
+        width: 48%;
+    }
+
+    .explore-kids-text {
+        width: 44%;
+    }
+
+    .kids-programs {
+        flex-direction: row;
+        gap: var(--space-2);
+    }
+
+    .program-card {
+        flex: 1;
+    }
+
+    .teachers-main {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: var(--space-6);
+    }
+
+    .teachers-text {
+        width: 48%;
+    }
+
+    .teachers-image {
+        width: 48%;
+    }
+
+    .teacher-options {
+        flex-direction: row;
+    }
+
+    .teacher-option {
+        flex: 1;
+    }
+
+    .researchers-content {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: var(--space-6);
+    }
+
+    .researchers-image {
+        width: 48%;
+    }
+
+    .researchers-text {
+        width: 48%;
+    }
+
+    .explore-hero {
+        height: 600px;
+        padding: 0;
+    }
+
+    .explore-hero .hero-image {
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+    }
+
+    .explore-hero h1 {
+        font-size: 4rem;
+        line-height: 1;
+    }
+
+    .explore-hero-badge {
+        top: 78%;
+        left: 88%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+    }
+
+    .exhibitions-hero {
+        height: 600px;
+        padding: 0;
+    }
+
+    .exhibitions-hero h1 {
+        font-size: 4rem;
+        line-height: 1;
+    }
+
+    .exhibitions-hero-badge {
+        top: 78%;
+        left: 88%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Exhibitions - Exhibition Spaces */
+
+    .exhibition-space-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-3);
+    }
+
+    /* Special Events and Exhibitions */
+
+    #special-events .exhibition-space-cards {
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+    }
+    #special-events .event-secondary {
+        grid-template-rows: auto 1fr;
+    }
+
+    /* Visit - Hero */
+
+    .visit-hero {
+        height: 600px;
+        padding: 0;
+    }
+
+    .visit-hero h1 {
+        font-size: 4rem;
+        line-height: 1;
+    }
+
+    .visit-hero-badge {
+        top: 78%;
+        left: 88%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+    }
+
+    .visit-hero-info {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        margin-top: var(--space-3);
+    }
+
+    .visit-hero-info-icon {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #d9f0df;
+        color: var(--color-green);
+        font-size: 1.3rem;
+    }
+
+    .visit-hero-info-title {
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+
+    .visit-hero-info-text {
+        font-size: 0.875rem;
+        line-height: 1.4;
+    }
+
+    .visit-hero .btn-primary,
+    .visit-hero .btn-secondary,
+    .visit-location .btn-secondary, 
+    .special-hours .btn-secondary{
+        text-transform: uppercase;
+    }
+
+    
+
+    /* Visit - Location */
+
+    .visit-information-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 120px;
+    }
+
+    .visit-map img {
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+
+    /* Visit - Admission */
+
+    .visit-admission .admission-option {
+        border: none;
+    }
+
+    /* Visit - Opening Hours */
+
+    .visit-planning-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-6);
+    }
+
+    .special-hours .btn-secondary {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    /* Visit - More to Explore */
+
+    .visit-more-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-3);
+    }
+
+    .visit-admission,
+    .visit-accessibility {
+        margin-top: 0;
+    }
+
+    .support-museum-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-6);
+    }
+
+    .support-image {
+        width: 48%;
+    }
+
+    .support-text {
+        width: 44%;
+    }
+
+    .support-options {
+        flex-direction: row;
+    }
+
+    .support-option {
+        flex: 1;
+    }
+
+    .accessibility-list {
+        margin-top: 16px;
+    }
+    /* Get involved - hero */
+
+    .get-involved-hero {
+        height: 600px;
+        padding: 0;
+    }
+
+    .get-involved-hero h1 {
+        font-size: 4rem;
+        line-height: 1;
+    }
+
+    .get-involved-hero-badge {
+        top: 78%;
+        left: 88%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Get Involved - Volunteer */
+
+    .volunteer-content {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: var(--space-6);
+    }
+
+    .volunteer-text {
+        width: 44%;
+    }
+
+    .volunteer-section {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .volunteer-decoration {
+        position: absolute;
+        display: block;
+        left: 42%;
+        bottom: -165px;
+        width: 350px;
+        height: 350px;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .volunteer-orbit-outer,
+    .volunteer-orbit-inner {
+        position: absolute;
+        border: 1px solid var(--color-purple);
+        border-radius: 50%;
+    }
+
+    .volunteer-orbit-outer {
+        width: 330px;
+        height: 330px;
+        left: 0;
+        top: 0;
+    }
+
+    .volunteer-orbit-inner {
+        width: 220px;
+        height: 220px;
+        left: 80px;
+        top: 55px;
+    }
+
+    .volunteer-yellow-dot,
+    .volunteer-purple-dot {
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    .volunteer-yellow-dot {
+        width: 16px;
+        height: 16px;
+        left: 68px;
+        top: 20px;
+        background-color: var(--color-yellow);
+    }
+
+    .volunteer-purple-dot {
+        width: 12px;
+        height: 12px;
+        left: 78px;
+        top: 130px;
+        background-color: var(--color-purple);
+    }
+
+    .volunteer-image {
+        overflow: visible;
+        position: relative;
+        width: 48%;
+        z-index: 1;
+        background-color: #f3efff;
+    }
+
+    .volunteer-image::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 350px;
+        background-color: #f3efff;
+        pointer-events: none;
+    }
+
+    .volunteer-image img {
+        position: relative;
+        border-radius: inherit;
+        z-index: 3;
+    }
+
+    .get-involved-hero .btn-primary,
+    .volunteer-section .btn-secondary,
+    .internship-section .btn-secondary {
+        text-transform: uppercase;
+    }
+
+    .internship-content {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: var(--space-6);
+    }
+
+    .internship-image {
+        width: 48%;
+    }
+
+    .internship-text {
+        width: 44%;
+    }
+
+    .explore-researchers {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .visit-planning {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .planning-decoration {
+        display: block;
+        position: absolute;
+        right: -160px;
+        bottom: -80px;
+        width: 300px;
+        height: 300px;
+        pointer-events: none;
+    }
+
+    .planning-orbit {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        right: 0;
+        bottom: 0;
+        border: 1px dashed var(--color-purple);
+        border-radius: 50%;
+    }
+
+    .planning-circle {
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        right: 20px;
+        bottom: 20px;
+        border-radius: 50%;
+        background-color: #ded6fa;
+    }
+
+    .planning-dot {
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+    }
+
+    .planning-dot-yellow {
+        width: 56px;
+        height: 56px;
+        background-color: var(--color-yellow);
+        top: -70px;
+        left: 30px;
+    }
+
+    .planning-dot-green {
+        width: 20px;
+        height: 20px;
+        background-color: var(--color-green);
+        top: 45px;
+        left: 5px;
+    }
+
+    .assistance-card {
+        width: 390px;
+    }
 }
+
