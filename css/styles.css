@@ -222,29 +222,32 @@ p {
 
 /* Buttons and links */
 
-.btn-primary {
-    display: inline-block;
-    padding: 14px var(--space-3);
-    background-color: var(--color-navy);
-    color: var(--color-background);
-    text-decoration: none;
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 24px;
     border-radius: 999px;
-    font-weight: 600;
+    text-decoration: none;
     font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
     text-transform: uppercase;
 }
 
+.btn-primary {
+    background-color: var(--color-navy);
+    color: var(--color-background);
+    border: 1px solid var(--color-navy);
+}
+
 .btn-secondary {
-    display: inline-block;
-    padding: 14px var(--space-3);
     background-color: var(--color-background);
     color: var(--color-navy);
-    text-decoration: none;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: 1rem;
     border: 1px solid var(--color-navy);
-    text-transform: uppercase;
 }
 
 .text-link {
@@ -333,7 +336,7 @@ p {
 }
 
 .hero-description {
-    max-width: 20rem;
+    max-width: 24rem;
     margin-bottom: var(--space-4);
 
 }
@@ -360,12 +363,18 @@ p {
 }
 
 .badge-text {
-    font-family: "Baloo 2", sans-serif;
-    font-size: 1rem;
-    line-height: 1.25;
-    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    font-weight: 600;
     color: var(--color-navy);
+    text-align: center;
     text-transform: uppercase;
+}
+
+.explore-hero-badge .badge-text,
+.exhibitions-hero-badge .badge-text {
+    color: #080f16;
 }
 
 .badge-ray {
@@ -1284,6 +1293,12 @@ p {
 
 .visit-location .heading-dot {
     background-color: var(--color-green);
+}
+
+.visit-location .btn-secondary {
+    background-color: #eef8f2;
+    border-color: var(--color-green);
+    color: var(--color-green-text);
 }
 
 .visit-info-text {
@@ -3226,7 +3241,7 @@ p {
         display: block;
         position: absolute;
         top: 0;
-        left: -30px;
+        left: calc(max(0px, (100vw - 1440px) / 2) - 30px);
         width: 72px;
         height: 72px;
         border-radius: 50%;
