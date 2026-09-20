@@ -3789,7 +3789,7 @@ p {
 
     .volunteer-image img {
         position: relative;
-        border-radius: inherit;
+        border-radius: 48px 12px 12px 12px;
         z-index: 3;
     }
 
